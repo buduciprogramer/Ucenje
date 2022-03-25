@@ -1,0 +1,31 @@
+package semafor;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class StopSemafor extends JPanel {
+
+    StopSemafor1 light=new StopSemafor1();
+   public StopSemafor(){
+
+    JButton changeButton=new JButton("Switch");
+    light.setPreferredSize(new Dimension(160,260));
+
+    buttonListener l=new buttonListener();
+changeButton.addActionListener(l);
+
+add(light);
+add(changeButton);
+   }
+
+class buttonListener implements ActionListener{
+
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        light.changeColor();
+    }
+}
+}
